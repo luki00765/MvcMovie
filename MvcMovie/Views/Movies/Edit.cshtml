@@ -1,0 +1,82 @@
+﻿@model MvcMovie.Models.Movie
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2 id="edycja">Edycja</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+    <div class="fieldset2">
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Tytuł)
+            </div>
+            <div class="wartosc3">
+           @Html.EditorFor(model => model.Tytuł)
+           <span class="walidacja">@Html.ValidationMessageFor(model => model.Tytuł)</span>
+            </div>
+        
+            
+        <br />
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Premiera)
+            </div>
+            <div class="wartosc3">
+            @Html.EditorFor(model => model.Premiera)
+            <span class="walidacja">@Html.ValidationMessageFor(model => model.Premiera)</span>
+        </div>
+        <br />
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Gatunek)
+            </div>
+            <div class="wartosc3">
+            @Html.EditorFor(model => model.Gatunek)
+            <span class="walidacja">@Html.ValidationMessageFor(model => model.Gatunek)</span>
+        </div>
+        
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Cena)
+            </div>
+            <div class="wartosc3">
+            @Html.EditorFor(model => model.Cena)
+            <span class="walidacja">@Html.ValidationMessageFor(model => model.Cena)</span>
+        </div>
+        
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Opis)
+            </div>
+            <div class="wartosc3">
+            @Html.EditorFor(model => model.Opis)
+            <span class="walidacja">@Html.ValidationMessageFor(model => model.Opis)</span>
+        </div>
+        <br />
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Okladka)
+            </div>
+            <div class="wartosc3">
+            @Html.EditorFor(model => model.Okladka)</div>
+        
+        <br />
+        
+        <br />
+
+
+        <p class="zapiszzmiany">
+            <input type="submit" value="Zapisz zmiany" />
+        </p>
+        <br />
+    </div>
+}
+
+<div>
+    <div class="wrocdoindex">@Html.ActionLink("Wróć do strony głównej", "Index")</div>
+</div>

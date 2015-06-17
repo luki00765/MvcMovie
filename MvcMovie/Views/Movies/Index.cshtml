@@ -1,0 +1,67 @@
+﻿@model IEnumerable<MvcMovie.Models.Movie>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+
+    
+    <div id="przycisk">
+    <p class="button">@Html.ActionLink("Dodaj film do bazy", "Create")</p>
+    </div>
+    
+    <div id="szukajka">
+    @using (Html.BeginForm()){   
+         <p class="szukajniki">Gatunek: @Html.DropDownList("movieGenre", "All")  
+           Tytuł: @Html.TextBox("SearchString")  
+         <input type="submit" value="Szukaj" /></p>
+        }
+      </div>
+   
+
+<table class="tabelka">
+    <tr class="glowne">
+        <th>
+            Tytuł
+        </th>
+        <th>
+            Premiera
+        </th>
+        <th>
+            Gatunek
+        </th>
+        <th>
+            Cena
+        </th>
+        <th>
+            Ocena
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td class="td1">
+            @Html.ActionLink(item.Tytuł, "Details", new { id=item.ID })
+        </td>
+        <td class="td2">
+            @Html.DisplayFor(modelItem => item.Premiera)
+        </td>
+        <td class="td3">
+            @Html.DisplayFor(modelItem => item.Gatunek)
+        </td>
+        <td class="td4">
+            @Html.DisplayFor(modelItem => item.Cena)
+        </td>
+        <td class="td5">
+            @Html.DisplayFor(modelItem => item.Ocena)
+        </td>
+        <td class="td6">
+            @Html.ActionLink("Edycja", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Usuń", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+    
+</table>
+<br />

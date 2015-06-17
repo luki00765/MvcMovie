@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MvcMovie.Models.Movie>
+
+@{
+    ViewBag.Title = "SearchIndex";
+}
+
+<h2>SearchIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    @using (Html.BeginForm()){   
+         <p>Gatunek: @Html.DropDownList("movieGenre", "All")  
+           Tytuł: @Html.TextBox("SearchString")  
+         <input type="submit" value="Filter" /></p>
+        }
+</p>
+<table>
+    <tr>
+        <th>
+            Tytuł
+        </th>
+        <th>
+            Premiera
+        </th>
+        <th>
+            Gatunek
+        </th>
+        <th>
+            Cena
+        </th>
+        <th>
+            Ocena
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tytuł)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Premiera)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gatunek)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ocena)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

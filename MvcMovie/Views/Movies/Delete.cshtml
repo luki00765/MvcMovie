@@ -1,0 +1,41 @@
+﻿@model MvcMovie.Models.Movie
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<h3 class="zapytanieusun">jesteś pewny że chcesz usunąć wybrany film?</h3>
+<<div class="fieldset3">>
+    
+    <br />
+    <div class="wartosc4">Tytuł <span class="czern">||</span>
+        @Html.DisplayFor(model => model.Tytuł)
+    </div>
+    <br />
+    <div class="wartosc4">ReleaseDate <span class="czern">||</span>
+        @Html.DisplayFor(model => model.Premiera)
+    </div>
+    <br />
+    <div class="wartosc4">Gatunek <span class="czern">||</span>
+        @Html.DisplayFor(model => model.Gatunek)
+    </div>
+    <br />
+    <div class="wartosc4">Cena <span class="czern">||</span>
+        @Html.DisplayFor(model => model.Cena)
+    </div>
+    <br />
+    <br />
+    <div id="przyciskusun">
+        @using (Html.BeginForm()) {
+    <input type="submit" value="Usuń"  />
+        }
+    </div>
+    <br />
+    
+</div>
+    <div class="wrocdoindex">
+        @Html.ActionLink("Wróć do strony głównej", "Index")
+    </div>
+}

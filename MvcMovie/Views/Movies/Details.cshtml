@@ -1,0 +1,42 @@
+﻿@model MvcMovie.Models.Movie
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="fieldsettytul">
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Tytuł)
+    </div></div>
+
+<br />
+<div class="fieldset2">
+    <br />
+    <div><img alt="" src="@Html.DisplayFor(model => model.Okladka)"   /></div>
+    <br />
+    
+    <div class="wartosc2"><i>Premiera</i>...:&nbsp&nbsp&nbsp
+        @Html.DisplayFor(model => model.Premiera)
+    </div>
+
+    
+    <div class="wartosc2"><i>Gatunek</i>....:&nbsp&nbsp&nbsp
+        @Html.DisplayFor(model => model.Gatunek)
+    </div>
+
+    
+    <div class="wartosc2"><i>Cena</i>..........:&nbsp&nbsp&nbsp
+        @Html.DisplayFor(model => model.Cena)
+    </div>
+    <br />
+    <div class="wartoscopis"><u>Opis filmu:</u></div>
+    <div class="zrodloopis"><p>
+        @Html.DisplayFor(model => model.Opis)</p>
+    </div>
+    <br />
+    </div>
+</>
+<br />
+    <div class="wrocdoindex">@Html.ActionLink("Wróć do strony głównej", "Index")</div>
+    <div class="przyciskedytuj">@Html.ActionLink("Edytuj", "Edit", new { id=Model.ID })</div>
+
